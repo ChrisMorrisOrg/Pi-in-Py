@@ -1,7 +1,10 @@
 # Imports
 import sys
-from time import sleep
+from time import *
 import math
+
+if sys.version_info < (3,0):
+    sys.exit("\n\033[1;38mERROR:\033[1;m Your Python interpreter is too old. Please consider upgrading to Python 3.x or greater.\nFor more information, please visit https://github.com/ChrisMorrisOrg/Pi-in-Py\n")
 
 # Intro
 def intro():
@@ -9,7 +12,7 @@ def intro():
     print("******************************************      ***     ")
     print("******************************************   *********  ")
     print("**********\033[1;33m Welcome to Pi-in-Py! \033[1;m**********  *********** ")
-    print("****************\033[1;33m - v0.2 - \033[1;m****************  *********** ")
+    print("****************\033[1;33m - v0.3 - \033[1;m****************  *********** ")
     print("******************************************   *********  ")
     print("******************************************      ***     ")
     sleep(1.5)
@@ -32,7 +35,7 @@ def intro():
 # Menu
 def menu():
     x = 0
-    menu = ['Divide-Subtract-Divide-Add...', 'Madhava']
+    menu = ['Divide-Subtract-Divide-Add...', 'Madhava', 'Euler']
     menu = list(enumerate(menu, start=1))
     while x == 0:
         print("\n\n********************************************************")
@@ -48,12 +51,21 @@ def menu():
         print("\n")
 
         if 'q' in x or 'exit' in x:
-            sys.exit("See you soon! :-)\n\n")
+            print("******************************************      ***     ")
+            print("******************************************   *********  ")
+            print("******** Good-pi, have a nice day! *******  *********** ")
+            print("*************** Delicious! ***************  *********** ")
+            print("******************************************   *********  ")
+            print("******************************************      ***     ")
+            print("\nhttps://github.com/ChrisMorrisOrg/Pi-in-Py  04-Jan-2013 ")
+            sys.exit("\n\n")
 
         if x == '1':
             iteratively()
         if x == '2':
             madheva()
+        if x == '3':
+            euler()
 
 
 
@@ -75,6 +87,9 @@ def iteratively():
     y = 0
     total = 0.0
 
+    # Start the timer
+    start_time = time()
+
     for i in range(1, x*2, 2):
         try:
             if y == x-1:
@@ -91,7 +106,10 @@ def iteratively():
             print("Can't continue calculating...")
             break
 
+    # Stop the timer
+    print("\nFinished in", time() - start_time, "seconds")
 
+    # Ask the user if they want to return to the main menu
     input("\nReturn?")
 
 
@@ -114,6 +132,9 @@ def madheva():
     y = 0
     total = 0.0
 
+    # Start the timer
+    start_time = time()
+
     for i in range(1, x*2, 2):
         try:
             if y == x-1:
@@ -130,7 +151,36 @@ def madheva():
             print("Can't continue calculating...")
             break
 
+    # Stop the timer
+    print("\nFinished in", time() - start_time, "seconds")
+
+    # Ask the user if they want to return to the main menu
     input("\nReturn?")
+
+
+
+# Euler's method to calculate Pi
+def euler():
+    print("\n\n\033[1;36m********************************************************")
+    print("********************* - 3. Euler - *******************")
+    print("********************************************************")
+    print("******** (20 * arctan(1/7)) + (8 * arctan(3/79)) *******")
+    print("********************************************************\033[1;m")
+
+    # Start the timer
+    start_time = time()
+
+    print("\nFinal approximation @ iteration #1:")
+
+    total = (20*math.atan(1/7)) + (8*math.atan(3/79))
+    print("total: (20*atan(1/7)) + (8*atan(3/79))\t| Pi: " + str(total))
+
+    # Stop the timer
+    print("\nFinished in", time() - start_time, "seconds")
+
+    # Ask the user if they want to return to the main menu
+    input("\nReturn?")
+
 
 
 
@@ -140,5 +190,6 @@ def madheva():
 # Welcome the user
 intro()
 
+# Open the menu
 while True:
     menu()
