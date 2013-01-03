@@ -26,9 +26,9 @@ Please feel free to fork or add other methods.
 Version History
 ---------------
 ### v0.2 (2013-01-03)
--Allows users to approximate pi using the Madheva method iteratively.
--Added menu and basic UI
--Added overflow handler
+- Allows users to approximate pi using the Madheva method iteratively.
+- Added menu and basic UI
+- Added overflow handler
 
 ### v0.1 (2013-01-02)
--Allows users to approximate pi by calculating 4*(1 - 1/3 + 1/5 - 1/7 +...) iteratively.
+- Allows users to approximate pi by calculating 4*(1 - 1/3 + 1/5 - 1/7 +...) iteratively.
