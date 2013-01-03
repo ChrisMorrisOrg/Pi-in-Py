@@ -32,7 +32,7 @@ def intro():
 # Menu
 def menu():
     x = 0
-    menu = ['Divide-Add-Divide-Subtract...', 'Madhava']
+    menu = ['Divide-Subtract-Divide-Add...', 'Madhava']
     menu = list(enumerate(menu, start=1))
     while x == 0:
         print("\n\n********************************************************")
@@ -60,7 +60,7 @@ def menu():
 # Iterative method to calculate Pi
 def iteratively():
     print("\n\n\033[1;36m********************************************************")
-    print("*********** - 1. Divide-Add-Divide-Subtract - **********")
+    print("*********** - 1. Divide-Subtract-Divide-Add - **********")
     print("********************************************************")
     print("************ 4 * (1 - 1/3 + 1/5 - 1/7 + ...) ***********")
     print("********************************************************\033[1;m")

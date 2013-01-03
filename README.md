@@ -26,9 +26,10 @@ Please feel free to fork or add other methods.
 Version History
 ---------------
 ### v0.2 (2013-01-03)
+- Fixed the message loop stating the ordering of addition and subtraction in the Divide-Subtract-Divide-Add algorithm (algorithm remains the same).
 - Allows users to approximate pi using the Madheva method iteratively.
-- Added menu and basic UI
-- Added overflow handler
+- Added menu and basic UI.
+- Added overflow handler.
 
 ### v0.1 (2013-01-02)
 - Allows users to approximate pi by calculating 4*(1 - 1/3 + 1/5 - 1/7 +...) iteratively.
