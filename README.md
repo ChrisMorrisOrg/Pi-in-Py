@@ -7,7 +7,7 @@ A simple little Python application to calculate pi to as many digits as possible
 Running the App
 ---------------
 Simply run in IDLE or open Terminal and run "python pi.py" inside the directory where pi.py is stored.
-Python 3.x is required.
+Requires Python 3.x.
 
 ###Please note that:
 - This app can slow down your computer considerably as well as drain your battery. Please save all work prior to running the application, and then start with a small number of iterations.
@@ -25,5 +25,10 @@ Please feel free to fork or add other methods.
 
 Version History
 ---------------
+### v0.2 (2013-01-03)
+-Allows users to approximate pi using the Madheva method iteratively.
+-Added menu and basic UI
+-Added overflow handler
+
 ### v0.1 (2013-01-02)
--Allows users to calculate pi by calculating 4*(1 - 1/3 + 1/5 - 1/7 +...) iteratively.
+-Allows users to approximate pi by calculating 4*(1 - 1/3 + 1/5 - 1/7 +...) iteratively.
