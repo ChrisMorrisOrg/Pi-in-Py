@@ -21,6 +21,10 @@ Please feel free to fork and add other methods for calculating pi.
 
 Version History
 ---------------
+### v0.5 (2013-Jan-05)
+- Improved code, documentation, modularisation, and styling improvements.
+- Information section added.
+
 ### v0.4 (2013-Jan-04)
 - Allows users to approximate pi using Newton's formula recursively.
 
