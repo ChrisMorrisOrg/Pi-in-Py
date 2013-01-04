@@ -27,7 +27,6 @@ For more information, please visit " + INFO_WEBSITE + "\n")
 
 
 
-
 ##############
 # Fake Chat: #
 ##############
@@ -47,6 +46,8 @@ def fakeChat(text):
         sleep(math.sin(random.random()*SPEED_VARIANCE))
         x += rate
     print("\033[1;m", end="")
+
+
 
 
 ##################
