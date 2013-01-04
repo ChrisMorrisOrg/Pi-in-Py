@@ -12,7 +12,7 @@ def intro():
     print("******************************************      ***     ")
     print("******************************************   *********  ")
     print("**********\033[1;33m Welcome to Pi-in-Py! \033[1;m**********  *********** ")
-    print("****************\033[1;33m - v0.3 - \033[1;m****************  *********** ")
+    print("****************\033[1;33m - v0.4 - \033[1;m****************  *********** ")
     print("******************************************   *********  ")
     print("******************************************      ***     ")
     sleep(1.5)
@@ -22,8 +22,8 @@ def intro():
     print("********************************************************")
     print("-> Use ctrl+C to end the program at any time")
     print("-> Note that calculating pi may slow down your computer\n    and drain your battery.")
-    print("-> Please \033[1;1msave all important data before proceeding\033[1;m, and\n    always start with a small number of iterations (try 100).")
-    print("-> The larger the amount of iterations you choose, the more precise the\n    approximation will be.")
+    print("-> Please \033[1;1msave all important data before proceeding\033[1;m, and\n    always start with a small number of iterations.")
+    print("-> The larger the amount of iterations you choose, the\n more precise the    approximation will be.")
     print("-> More methods for approximating pi will be added in\n    future revisions.")
     print("-> Follow or contribute to the mini-project at:\n    github.com/ChrisMorrisOrg/Pi-in-Py")
 
@@ -35,7 +35,7 @@ def intro():
 # Menu
 def menu():
     x = 0
-    menu = ['Divide-Subtract-Divide-Add...', 'Madhava', 'Euler']
+    menu = ['Divide-Subtract-Divide-Add...', 'Madhava', 'Euler', 'Newton']
     menu = list(enumerate(menu, start=1))
     while x == 0:
         print("\n\n********************************************************")
@@ -53,8 +53,8 @@ def menu():
         if 'q' in x or 'exit' in x:
             print("******************************************      ***     ")
             print("******************************************   *********  ")
-            print("******** Good-pi, have a nice day! *******  *********** ")
-            print("*************** Delicious! ***************  *********** ")
+            print("*************** Good-pi... ***************  *********** ")
+            print("******* ~ Have a delicious day! ~ ********  *********** ")
             print("******************************************   *********  ")
             print("******************************************      ***     ")
             print("\nhttps://github.com/ChrisMorrisOrg/Pi-in-Py  04-Jan-2013 ")
@@ -66,6 +66,10 @@ def menu():
             madheva()
         if x == '3':
             euler()
+        if x == 'f':
+            fibonacci()
+        if x == '4':
+            newtonIntro()
 
 
 
@@ -113,7 +117,6 @@ def iteratively():
     input("\nReturn?")
 
 
-
 # Madheva (iterative) method to calculate Pi
 def madheva():
     print("\n\n\033[1;36m********************************************************")
@@ -159,6 +162,7 @@ def madheva():
 
 
 
+
 # Euler's method to calculate Pi
 def euler():
     print("\n\n\033[1;36m********************************************************")
@@ -182,6 +186,81 @@ def euler():
     input("\nReturn?")
 
 
+
+# Easter egg: Fibonacci numbers
+def fibonacci():
+    print("\033[1;31m*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#")
+    print("#*#*#*#*#*#*#*#*#*#*# - F. Fibonacci - *#*#*#*#*#*#*#*#*")
+    print("*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#")
+    print("#*#*#*#*#*#*#*#*#* F_n = F_n-1 + F_n-2 *#*#*#*#*#*#*#*#*")
+    print("*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#\033[1;m")
+
+    x = ""
+
+    # User must enter a number
+    while not x.isdigit():
+        x = input("How many times do you want to iterate? (More = slower)\n\nTip: Try numbers between 1000 and 3000, then scroll\n through the numbers to see an amazing pattern\n\nEnter a number: ")
+
+    x = int(x)
+
+    # Set the variables for calculating Fibonacci numbers
+    a, b, y = 0, 1, 0
+
+    # Start the timer
+    start_time = time()
+
+    while y < x:
+        print(b, end=" ")
+        a, b, y = b, a+b, y+1
+
+
+    # Stop the timer
+    print("\nFinished in", time() - start_time, "seconds")
+
+    # Ask the user if they want to return to the main menu
+    input("\nReturn?")
+
+
+
+# Newton - Intro page
+def newtonIntro():
+    print("\n\n\033[1;36m********************************************************")
+    print("********************* - 4. Newton - ********************")
+    print("********************************************************")
+    print(" 2 * (1+ (1/3 * (1 + (2/5) * (1 + (3/7) * (1 + ...))))) ")
+    print("********************************************************\033[1;m")
+
+    x = ""
+
+    # User must enter a number
+    while not x.isdigit() or int(x) >= 995:
+        x = input("How many times do you want to recurse? (More = slower)\nEnter a number less than 995: ")
+
+    x = int(x)
+
+    # Start the timer
+    start_time = time()
+
+    print(str("\nRecursion #" + str(x) + ": " + str(2*newton(1, 3, x, True))))
+
+    # Stop the timer
+    print("\nFinished in", time() - start_time, "seconds")
+
+    # Ask the user if they want to return to the main menu
+    input("\nReturn?")
+
+# Newton (recursive) method to calculate pi
+def newton(x, i, y, showResults):
+    if showResults:
+        if y > 0:
+            result = 1 + (x/i) * newton(x+1, i+2, y-1, True)
+            print("Recursion #" + str(y-1) + ": " + str(2*newton(1, 3, y-1, False)))
+            return result
+        return 1
+    else:
+        if y > 0:
+            return 1 + (x/i) * newton(x+1, i+2, y-1, False)
+        return 1
 
 
 

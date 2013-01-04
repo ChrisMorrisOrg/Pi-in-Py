@@ -21,10 +21,13 @@ Please feel free to fork and add other methods for calculating pi.
 
 Version History
 ---------------
-### v0.3 (2013-Jan-04)
+### v0.4 (2013-Jan-04)
+- Allows users to approximate pi using Newton's formula recursively.
+
+### v0.3 (2013-Jan-03)
 - Allows users to approximate pi using Euler's formula.
 - Methods are now timed.
-- Forces Python 3.x use.
+- Forces the user to run in Python 3.x.
 
 ### v0.2 (2013-Jan-03)
 - Fixed the message loop stating the ordering of addition and subtraction in the Divide-Subtract-Divide-Add algorithm (algorithm remains the same).
