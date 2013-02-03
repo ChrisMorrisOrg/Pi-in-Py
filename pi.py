@@ -51,7 +51,7 @@ def fakeChat(text):
 
 
 ##################
-# ColurfulShell: # https://gist.github.com/4450466
+# ColourfulShell: # https://gist.github.com/4450466
 ##################
 # Colourise - colours text in shell. Returns plain if colour doesn't exist.
 def colourise(colour, text):

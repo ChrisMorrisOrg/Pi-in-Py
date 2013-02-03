@@ -1,4 +1,4 @@
-# Pi in Py
+# Pi-in-Py
 
 By [Chris Morris](http://chrismorris.org).
 
@@ -7,7 +7,10 @@ A simple little Python application to approximate pi using various methods.
 Running the App
 ---------------
 Simply run in IDLE or open Terminal and run "python pi.py" inside the directory where pi.py is stored.
-Requires Python 3.x.
+Terminal is recommended for the best experience.
+
+*Requires Python 3.x.*
+
 
 ###Please note that:
 - This app can slow down your computer considerably as well as drain your battery. Please save all work prior to running the application, and always start with a small number of iterations (try 100).
